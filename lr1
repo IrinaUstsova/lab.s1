@@ -1,56 +1,56 @@
 #include <iostream>
 #include <cmath>
 
-int main ()
+int main()
 {
-    std :: cout << "Привет,";
+    std::cout << "Hello, ";
     int x;
-    std :: cout << "Введите x:";
-    std :: cin >> x;
-    int s = 3 * pow (x, 5) + 3 * pow (x, 3) -1;
-    std :: cout << s << std :: endl;
+    std::cout << "Enter x:";
+    std:: cin >> x;
+    int s=3*pow(x,5)+3*pow(x,3)-1;
+    std::cout << s<<std::endl;
 
-    беззнаковый длинный int a;
-    std :: cout << "Введите a:";
-    std :: cin >> a;
-    int t = 2 * abs (a) + sqrt (4 + 3 * a);
-    std :: cout << t << std :: endl;
+    unsigned long int a;
+    std::cout << "Enter a:";
+    std:: cin >> a;
+    int t=2*abs(a)+sqrt(4+3*a);
+    std::cout << t<< std::endl;
 
-    bool k, l, m, n;
-    std :: cout << "Введите k:";
-    std :: cin >> k;
-    std :: cout << "Введите l:";
-    std :: cin >> l;
-    std :: cout << "Введите m:";
-    std :: cin >> m;
-    std :: cout << "Введите n:";
-    std :: cin >> n;
-    std :: cout << (n || (m ^! k) &&! l) << std :: endl;
+    bool k,l,m,n;
+    std::cout << "Enter k:";
+    std:: cin >> k;
+    std::cout << "Enter l:";
+    std:: cin >> l;
+    std::cout << "Enter m:";
+    std:: cin >> m;
+    std::cout << "Enter n:";
+    std:: cin >> n;
+    std::cout<<(n||(m^!k)&&!l)<<std::endl;
 
     int a;
     int b;
-    std :: cout << "Введите b:";
-    std :: cin >> b;
-    а = pow (2, б);
-    std :: cout << a << std :: endl;
-    std :: cout << std :: oct << a << std :: endl;
+    std::cout<< "Enter b:";
+    std::cin>>b;
+    a=pow(2,b);
+    std::cout<<a<<std::endl;
+    std::cout<<std::oct<<a<<std::endl;
 
-    беззнаковый короткий int c;
-    беззнаковый короткий int d;
-    беззнаковый короткий int e;
-    беззнаковый короткий int f;
-    беззнаковый короткий int a;
-    std :: cout << "Введите c:";
-    std :: cin >> c;
-    std :: cout << "Введите d:";
-    std :: cin >> d;
-    std :: cout << "Введите e:";
-    std :: cin >> e;
-    std :: cout << "Введите f:";
-    std :: cin >> f;
-    а = (! (c || d)) && (e ^ f);
-    std :: cout << a << std :: endl;
-    std :: cout << std :: hex << a << std :: endl;
+    unsigned short int c;
+    unsigned short int d;
+    unsigned short int e;
+    unsigned short int f;
+    unsigned short int a;
+    std::cout << "Enter c:";
+    std::cin >>c;
+    std::cout << "Enter d:";
+    std::cin >>d;
+    std::cout << "Enter e:";
+    std::cin >>e;
+    std::cout << "Enter f:";
+    std::cin >>f;
+    a=(!(c||d))&&(e^f);
+    std::cout<<a<<std::endl;
+    std::cout<<std::hex<<a<<std::endl;
 
-    возврат 0;
+    return 0;
 }
