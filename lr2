@@ -1,0 +1,78 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main()
+{
+    cout << "ASCII:" << endl;
+    char a = 0;
+    for (int i = 0; i <= 255; ++i) {
+        cout << i << " - " << a << endl;
+        a++;
+    }
+
+    cout << "enter symbols" << endl;
+    cin >> a;
+    if ((a >= '0') && (a <= '9')) cout << "digit" << endl;
+    else if (((a >= 'A') && (a <= 'Z')) || ((a >= 'a') && (a <= 'z'))) cout << "letter" << endl;
+    else cout << "UFO" << endl;
+
+    unsigned int x;
+    cout << "enter x" << endl;
+    cin >> x;
+    double y = 0;
+    int z = x % 5;
+    switch (z) {
+        case 0:
+            y = pow(x, 2);
+            break;
+        case 1:
+            y = x;
+            break;
+        case 2:
+            y = 0;
+            break;
+        case 3:
+            y = -x;
+            break;
+        case 4:
+            y = -1;
+            break;
+    }
+    cout << y << endl;
+
+    cout << "enter x1" << endl;
+    cin >> x1;
+    int n, i;
+    y = cos(x1);
+    h = pow(10, i);
+    long double h;
+    long double k;
+    double l = 1.0;
+    for (int i = -2; i >= -6; --i)
+    {
+        n = 1;
+        h = 1 * x1;
+        k = -1 * pow(x1, 2) / 2;
+        while (abs(h - y) >= 0.001 * l) 
+        {
+            int factorial(int s)
+            {
+                int f = 1, m;
+                for (m = 2; m <= s; ++m) 
+                {
+                    f = f * m;
+                }
+                return f;
+            }
+            n++
+            h += k;
+            k = pow(-1, n) * pow(x1, 2n) / (2n)f;
+            cout << y << " " << h << endl;
+        }
+        u *= 0.1;
+        cout << "for 10^" << i << " need interations " << n << endl;
+    }
+    return 0;
+}
