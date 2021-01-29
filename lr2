@@ -1,78 +1,51 @@
 #include <iostream>
 #include <cmath>
+
 using namespace std;
 
-
-int main()
+int main ()
 {
     cout << "ASCII:" << endl;
-    char a = 0;
-    for (int i = 0; i <= 255; ++i) {
-        cout << i << " - " << a << endl;
-        a++;
+    for (int i = 0; i <= 255; i++)
+    {
+        cout << "code = " << i << "\t" << "char = " << (char)i << endl;
     }
 
     cout << "enter symbols" << endl;
     cin >> a;
     if ((a >= '0') && (a <= '9')) cout << "digit" << endl;
     else if (((a >= 'A') && (a <= 'Z')) || ((a >= 'a') && (a <= 'z'))) cout << "letter" << endl;
-    else cout << "UFO" << endl;
+    else cout << "symbols unknown" << endl;
 
     unsigned int x;
-    cout << "enter x" << endl;
+    cout << "Enter x" << endl;
     cin >> x;
     double y = 0;
     int z = x % 5;
-    switch (z) {
-        case 0:
-            y = pow(x, 2);
-            break;
-        case 1:
-            y = x;
-            break;
-        case 2:
-            y = 0;
-            break;
-        case 3:
-            y = -x;
-            break;
-        case 4:
-            y = -1;
-            break;
+    switch (z)
+    {
+        case 0: y = pow(x, 2); break;
+        case 1: y = x; break;
+        case 2: y = 0; break;
+        case 3: y = -x; break;
+        case 4: y = -1; break;
     }
     cout << y << endl;
 
-    cout << "enter x1" << endl;
-    cin >> x1;
-    int n, i;
-    y = cos(x1);
-    h = pow(10, i);
-    long double h;
-    long double k;
-    double l = 1.0;
-    for (int i = -2; i >= -6; --i)
+    double  x_4;
+    int n=1, e;
+    cout << "Enter the accuracy" << endl;
+    cin >> e;
+    y_1 = cos(x_4);
+    y_2 = pow(-1,n) * pow(x, 2*n) / 2*n;
+    while ((y_2 - y_1) >= e
     {
-        n = 1;
-        h = 1 * x1;
-        k = -1 * pow(x1, 2) / 2;
-        while (abs(h - y) >= 0.001 * l) 
-        {
-            int factorial(int s)
-            {
-                int f = 1, m;
-                for (m = 2; m <= s; ++m) 
-                {
-                    f = f * m;
-                }
-                return f;
-            }
-            n++
-            h += k;
-            k = pow(-1, n) * pow(x1, 2n) / (2n)f;
-            cout << y << " " << h << endl;
-        }
-        u *= 0.1;
-        cout << "for 10^" << i << " need interations " << n << endl;
+        n++
+        y_2 = y_2 + (pow(-1,n) * pow(x, 2*n) / 2*n)
     }
+    cout << "For accuracy " << e << " required " << n << " interations " << endl;
+    
+
+    system (pause);
     return 0;
 }
