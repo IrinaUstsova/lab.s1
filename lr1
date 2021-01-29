@@ -1,56 +1,44 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
+#include <ios>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello, ";
+    cout <<"Hello, world"<< endl;
+
     int x;
-    std::cout << "Enter x:";
-    std:: cin >> x;
-    int s=3*pow(x,5)+3*pow(x,3)-1;
-    std::cout << s<<std::endl;
-
-    unsigned long int a;
-    std::cout << "Enter a:";
-    std:: cin >> a;
-    int t=2*abs(a)+sqrt(4+3*a);
-    std::cout << t<< std::endl;
-
-    bool k,l,m,n;
-    std::cout << "Enter k:";
-    std:: cin >> k;
-    std::cout << "Enter l:";
-    std:: cin >> l;
-    std::cout << "Enter m:";
-    std:: cin >> m;
-    std::cout << "Enter n:";
-    std:: cin >> n;
-    std::cout<<(n||(m^!k)&&!l)<<std::endl;
+    cout <<"Enter x"<<endl;
+    cin >> x;
+    int x_1 = 3 * pow (x, 5) + 3 * pow (x, 3) -1;
+    cout << setprecision(3)<< x_1<< endl;
 
     int a;
-    int b;
-    std::cout<< "Enter b:";
-    std::cin>>b;
-    a=pow(2,b);
-    std::cout<<a<<std::endl;
-    std::cout<<std::oct<<a<<std::endl;
+    cout <<"Enter a"<< endl;
+    cin >> a;
+    int a_2 = 2*abs(a)+sqrt(4+3*a);
+    cout << showpos << a_2 << endl;
 
-    unsigned short int c;
-    unsigned short int d;
-    unsigned short int e;
-    unsigned short int f;
-    unsigned short int a;
-    std::cout << "Enter c:";
-    std::cin >>c;
-    std::cout << "Enter d:";
-    std::cin >>d;
-    std::cout << "Enter e:";
-    std::cin >>e;
-    std::cout << "Enter f:";
-    std::cin >>f;
-    a=(!(c||d))&&(e^f);
-    std::cout<<a<<std::endl;
-    std::cout<<std::hex<<a<<std::endl;
+    bool k, l, m, n;
+    cout <<"Enter k, l, m, n" << endl;
+    cin >> k >> l >> m >> n;
+    bool r_3 = (n||(m^!k)&&!l);
+    cout << boolalpha << r_3 << endl;
 
-    return 0;
+    short int b;
+    cout << "Enter b" << endl;
+    cin >> b;
+    int b_4 = pow(2, b);
+    cout << dec << b_4 << endl;
+    cout << oct << b_4 << endl;
+
+    unsigned short int c, d, e, f;
+    cout << "Enter c, d, e, f" << endl;
+    cin >> c >> d >> e >> f;
+    unsigned short int r_5 = (! (c || d)) && (e ^ f);
+    cout << hex << showbase << r_5 << endl;
+    
+    system ("pause");
+    retutn 0;
 }
