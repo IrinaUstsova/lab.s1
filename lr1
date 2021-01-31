@@ -39,6 +39,5 @@ int main()
     unsigned short int r_5 = (! (c || d)) && (e ^ f);
     cout << hex << showbase << r_5 << endl;
     
-    system ("pause");
-    retutn 0;
+    return 0;
 }
