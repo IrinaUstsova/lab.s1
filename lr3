@@ -53,7 +53,7 @@ int main()
     cin>> m;
     vector<int> vec;
     {
-        for  (int i=0; i<m; i++))
+        for  (int i=0; i<m; i++)
         {
             cin >> a;
             vec.push_back (а)
@@ -66,6 +66,7 @@ int main()
     for (int i : vec) cout << i << " ";
     cout << endl;
     //3.3
+    vector<int> vec;
     int s = 0;
     for (int i : vec1) s+= pow(i,2);
     cout << "Sum of squares" << s << endl;
@@ -110,6 +111,5 @@ int main()
     str_4.insert(pos,word_2);
     cout << str_4 << endl;
     
-    system (pause);
     return 0;
 }
