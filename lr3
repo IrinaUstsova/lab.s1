@@ -10,51 +10,55 @@ using namespace std;
 int main()
 {
     //1
-    int arr_1[10]={};
-    srand(time(nullptr));
     int i;
-    for (int i=0; i<10; i++);
-    arr[i]=rand()%21-10;
+    int arr_1[i]={};
+    srand(time(nullptr));
+    for (int i=0; i<10; i++)
+    {
+    arr_1[i]=rand()%21-10;
     cout<<arr_1[i]<<endl;
+    }
     int a;
     a=(pow(arr_1[1],2))+(pow(arr_1[2],2))+(pow(arr_1[7],2));
     cout<<a<<endl;
 
     //2.1
-    int arr_2, n;
+    int *arr_2 = new int;
+    int n;
     cout<<"Enter n>10"<<endl;
     cin>> n;
     {
-        for  (int i=0; i<n; i++))
+        for  (int i=0; i<n; i++)
         {
-            cin >> arr_2[i];
+            cout << arr_2[i]<<endl;
         }
     }
     cout<<"Your array" << arr_2[i] <<endl;
     //2.2
-    if (arr_2[i]%2==0)
-        arr_2[i]=arr_2[i]/3;
-    cout<<arr_2[i]<<endl
+    if (arr_2[i]%2==0) cout<<arr_2[i]/3<<endl;
+    else cout<< arr_2[i]<< endl;
     //2.3
-    long int arf;
-    int k1;
-    cout<<"Enter k1"<<endl;
-    cin>>k1;
-    int k2;
-    cout<<"Enter k2"<<endl;
-    cin>>k2;
-    for (int i=k1; i<k2; i++)
-        arf=(k1+k2)/2;
-    cout<<arf<<endl;
+    cout << "Enter k1 and k2" <<endl;
+    int k, k1, k2;
+    cin >> k1 >> k2;
+    int arf = 0;
+    for (int i = k1; i <= k2; ++i) 
+    {
+    arf += arr_2[i];
+    k++;
+    }
+    cout << "The expression is equal to " << arf/k <<endl;
+    delete arr_2;
 
     //3.1
-    int m, a;
+    int m;
     cout<<"Enter m>5"<<endl;
     cin>> m;
     vector<int> vec;
     {
         for  (int i=0; i<m; i++)
         {
+            int a;
             cin >> a;
             vec.push_back (а)
         }
@@ -66,21 +70,21 @@ int main()
     for (int i : vec) cout << i << " ";
     cout << endl;
     //3.3
-    vector<int> vec;
+    vector<int> vec1;
     int s = 0;
     for (int i : vec1) s+= pow(i,2);
     cout << "Sum of squares" << s << endl;
     //3.4
-    int n_3;
-    for (int i = 0; i < vec.size(); ++i)
+    int n_3 = -1;
+    for (int i = 0; i < vec1.size(); ++i) 
     {
-        if (vec[i] == 2)
+        if (vec1[i] == 2)
         {
-            vec.erase(vec[i]);
+            n_3 = i;
             break;
         }
     }
-    for (int i : vec) cout << i << " ";
+    for (int i : vec1) cout << i << " ";
     cout << endl;
 
     //4.1
@@ -91,9 +95,8 @@ int main()
     //4.2
     int s=0;
     cout << str << "has" << str.lenght() << "characters" << endl;
-    cout << (str.empty(e, y, u, i, o, a) ? s+=0 : s+=1) << endl;
-    s= s / str.lenght();
-    cout << "Percentage of consonant letters =" << s << endl;
+    cout << (str.empty('e', 'y', 'u', 'i', 'o', 'a') ? s+=0 : s+=1) << endl;
+    cout << "Percentage of consonant letters =" << s/ str.lenght() << endl;
     //4.3
     int l1, l2;
     cout << "Enter l1 and l2" << endl;
@@ -101,13 +104,14 @@ int main()
     cout << str.substr(l1, l2 - l1 + 1) << endl;
     //4.4
     string str_4 ("Can you can a can as a canner can can a can?") ;
-    string word_1 (can) ;
+    string can ;
     string word_2 ;
     getline(cin,str_4);
     cout << "Enter a replacement" << endl;
     cin >> word_2;
-    pos = str_4.find(word_1);
-    str_4.erase(pos,word_1.size());
+    int pos;
+    pos = str_4.find(can);
+    str_4.erase(pos,can.size());
     str_4.insert(pos,word_2);
     cout << str_4 << endl;
     
