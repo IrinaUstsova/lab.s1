@@ -36,7 +36,7 @@ int main()
     unsigned short int c, d, e, f;
     cout << "Enter c, d, e, f" << endl;
     cin >> c >> d >> e >> f;
-    unsigned short int r_5 = (! (c | d)) & (e ^ f);
+    unsigned short int r_5 = (~(c | d)) & (e ^ f);
     cout << hex << showbase << r_5 << endl;
 
     return 0;
