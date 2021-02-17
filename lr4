@@ -1,60 +1,83 @@
 #include <iostream>
-#include <vector>
+#include <vector> 
 
-using namespace std;
+using namespace std; 
 
-int main()
+int main ()
 {
-    vector <int> vec;
-    for (int i = 0; i <30; i ++))
-        {
-
-            vec.push_back (rand()%201-100)
-        }
-
-    for (int i = 0; i < 30; i++)
+    vector <int> vec1;
+    int size=30;
+    vec1 = new int [size];
+    for (int i=0; i<size; i++)
     {
-        for (int j = 0; j < 29; j++)
+        vec1.push_back (rand()%201-100);
+    }
+    int temp;
+    for (int i=0; i<size-1; i++)
+    {
+        for (int j=0; j<size-i-1; j++)
         {
-            if (vec[j] > vec[j + 1])
+            if (vec1[j]>vec1[j+1])
             {
-                int b = vec[j];
-                vec[j] = vec[j + 1];
-                vec[j + 1] = b;
+                temp= vec1[j];
+                vec1[j]=vec1[j+1];
+                vec1[j+1]=temp;
             }
         }
     }
-    cout << "Sorted array: ";
-    for (int i = 0; i < 30; i++)
+    for (int i=0; i<size; i++)
     {
-        cout << vec[i] << endl;
+        cout << vec1 << " ";
     }
+    cout << endl;
+    
+    return 0;
+}
 
-    selectionSort(vector <int> vec);
-    int a;
+int main()
+{
+    vector <int> vec2;
+    int size=30;
+    vec2 = new int [size];
+    for (int i=0; i<size; i++)
     {
-    for i = 0 to n - 2
-    for j = i + 1 to n - 1
-    if a[i] > a[j]
-    swap(a[i], a[j])
+        vec2.push_back (rand()%201-100);
     }
-    cout << "Sorted array: ";
-    for (int i = 0; i < 30; i++)
+    int min=0;
+    int men=0;
+    for (int i=0; i<size; i++)
     {
-        cout << vec[i] << endl;
-    }
-
-    merge(int vec(30), int l, int h) 
-    {
-        int m;
-        if (l < h) 
+        min=i;
+        for (int j=i+1; j<size; j++)
+        min = (vec2[j]<vec2[min] ? j:min);
+        if (i!=min)
         {
-            m = (l + h) / 2;
-            merge(vec(30), l, m);
-            merge(vec(30), m + 1, h);
-            merge(vec(30), l, h, m);
+            men=vec2[i];
+            vec2[i]=vec2[min];
+            vec2[min]=men;
         }
     }
+     for (int i=0; i<size; i++)
+    {
+        cout << vec1 << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}
+
+int main()
+{
+    vector <int> vec2;
+    int size=30;
+    vec2 = new int [size];
+    for (int i=0; i<size; i++)
+    {
+        vec2.push_back (rand()%201-100);
+    }
+    
+    
+    
 
     merge(int vec(30), int l, int h, int m) 
     {
