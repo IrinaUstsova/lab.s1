@@ -6,18 +6,21 @@ using namespace std;
 int main ()
 {
     {
-        cout << "Enter symbols" << endl; 
-    char ch;
-    cin >> ch;
-    cout << ch << " has ASCII code " << static_cast<int>(ch) << endl;
+    cout << " ASCII: " << endl;
+    char ch = 0 ;
+    for ( int i = 0 ; i <= 255 ; ++ i)
+    {
+        cout << ch << " has ASCII code " << static_cast<int>(ch) << endl;
+        ch ++;
+    }
     }
     
     {
         cout << "Enter symbols" << endl;
-    int a;
+    char a;
     cin >> a;
-    if ((a >= '0') & (a <= '9')) cout << "digit" << endl;
-    else if (((a >= 'A') & (a <= 'Z')) | ((a >= 'a') & (a <= 'z'))) cout << "letter" << endl;
+    if ((a >= '0') && (a <= '9')) cout << "digit" << endl;
+    else if (((a >= 'A') && (a <= 'Z')) || ((a >= 'a') && (a <= 'z'))) cout << "letter" << endl;
     else cout << "symbols unknown" << endl;
     }
 
