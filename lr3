@@ -11,7 +11,7 @@ int main()
 {
     //1
     int i;
-    int arr_1[i]={};
+    int arr_1[10]={};
     srand(time(nullptr));
     for (int i=0; i<10; i++)
     {
@@ -23,20 +23,20 @@ int main()
     cout<<a<<endl;
 
     //2.1
-    int *arr_2 = new int;
+    double *arr_2 = new double[10];
     int n;
     cout<<"Enter n>10"<<endl;
     cin>> n;
     {
         for  (int i=0; i<n; i++)
         {
-            cout << arr_2[i]<<endl;
+            cout << arr_2<<endl;
         }
     }
-    cout<<"Your array" << arr_2[i] <<endl;
+    cout<<"Your array" << arr_2 <<endl;
     //2.2
-    if (arr_2[i]%2==0) cout<<arr_2[i]/3<<endl;
-    else cout<< arr_2[i]<< endl;
+    if (arr_2%2==0) cout<<arr_2/3<<endl;
+    else cout<< arr_2<< endl;
     //2.3
     cout << "Enter k1 and k2" <<endl;
     int k, k1, k2;
@@ -84,6 +84,7 @@ int main()
             break;
         }
     }
+    if (nomer != -1) vec1.erase(vec1.begin()+nomer);
     for (int i : vec1) cout << i << " ";
     cout << endl;
 
