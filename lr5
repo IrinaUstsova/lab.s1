@@ -1,0 +1,72 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <algorithm>
+#include <functional>
+#include <set>
+
+using namespace std;
+
+typedef unordered_multimap<int, string>::iterator umit;
+
+int main()
+{
+    //1.1
+    unordered_multimap<int,string>arr={
+        {-1,"morning"},{9,"night"},{3,"hello"},{6,"sun"},{5,"pain"},{3,"rain"}};
+    auto print=[](const pair<int,string>n) 
+    {cout <<"<"<<n.first<<","<< n.second<< ">"; };
+    for_each(arr.cbegin(), arr.cend(), print);
+	cout << endl;
+	//1.2 
+	arr.insert({{-5, "good"},{-5, "fine"}});
+    for_each(arr.cbegin(), arr.cend(), print);
+    cout<<endl;
+    //1.3 
+    arr.erase(6);
+    for_each(arr.cbegin(), arr.cend(), print);
+    cout<<endl;
+    //1.4
+    map<int,string>arr1(arr.begin(),arr.end());
+	for (auto i:arr1) 
+	{
+		arr1.insert(make_pair(i.first,i.second));
+	}
+	for_each(arr1.begin(),arr1.end(),print);
+	cout << endl;
+	
+	//2.1 
+	auto arr2 = [](const pair<int,string> n) {return n.first>1;n.last<8};
+	int arr0 = 0;
+	cnt = count_if(arr1.cbegin(), arr1.cend(), arr2);
+	cout << "the range of keys is from 1 to 8:" << arr0 << endl;
+	//2.2 
+	vector<int> vec;
+    auto make_vctr = [](const pair<int,string> n) {return n.first; };
+    transform(arr1.cbegin(),arr1.cend(),back_inserter(vec),make_vctr);
+    auto print = [](int n){cout<<n<<" ";};
+    for_each(vec.cbegin(), vec.cend(), print);
+    cout<<endl;
+    
+    //3.1 
+    auto find7 = find(vec.cbegin(), vec.cend(), 7);
+	 if (find7!=vec.cend())  
+	 cout << "the element is found"";
+	 else cout << "the element is not found";
+	//3.2 
+	replace_if(vec.begin(),vec.end(),bind(less<int>(),placeholders::_1, 0), -1);
+	for_each(vec.cbegin(),vec.cend(),vec_print);
+	cout << endl;
+	//3.3 
+	sort(vec.begin(),vec.end(),[](int a, int b) {return a > b; });
+    for_each(vec.cbegin(),vec.cend(),print);
+    cout<<endl;
+	//3.4 
+	set<int,greater<int>> st(vec.begin(),vec.end());
+	for_each(st.cbegin(),st.cend(),print);
+    cout<<endl;
+
+    return 0;
+}
