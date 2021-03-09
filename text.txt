@@ -1,0 +1,3 @@
+; maths; 0; english; 0; chemistry; 0; physics; 0; 
+; maths; 0; english; 0; chemistry; 0; physics; 0; 
+egor; maths; 4; english; 5; chemistry; 3; physics; 2; 
