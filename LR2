@@ -3,6 +3,13 @@
 
 using namespace std;
 
+nt fact(int v)
+{
+    if(v<0) return 0;
+    if(v==0) return 1;
+    else return v*fact(v-1);
+}
+
 int main ()
 {
     {
@@ -42,22 +49,25 @@ int main ()
     }
     
     {
-        double e,sum=1.0;
-    double y_1;
-    int i=0; 
-    cout << "Enter the accuracy" << endl;
-    cin >> e;
-    int x_4;
-    cout << "Enter the x" << endl;
-    cin >> x_4;
-    y_1= cos (x_4);
-    while((1 - y_1)>=e)
-    {
-        sum+=pow(-1,i) * pow(x_4, 2*i) / 2*i; ; 
-        i++;
-    }
-    cout.precision(7);
-     cout << "For accuracy " << sum << " required " << i << " interations " << endl;
+        cout << "enter x" << endl;
+        double x, y;
+        cin >> x;
+        y = cos(x);
+        int n;
+        long double h;
+        double sum = 1.0;
+        for (int i=0; i>=-6; i--)
+        {
+            n=0;
+            h=1.0*x;
+            while (abs(h-y)>=0.001*sum)
+            {
+                n++;
+                h+=pow(-1,n)*pow(x,2*n+1)/fact(2*n+1);
+                cout << y << endl;
+            }
+            cout << "For accuracy " << i << " required " << n << " interations " << endl;
+        }
     }
     
     return 0;
