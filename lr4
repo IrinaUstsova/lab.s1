@@ -1,123 +1,129 @@
 #include <iostream>
-#include <vector> 
+#include <vector>
 
-using namespace std; 
+using namespace std;
 
-int main ()
+void bubbleSort (vector<int> vec)
 {
-    vector <int> vec1;
     int size=30;
-    vec1 = new int [size];
+    int temp;
     for (int i=0; i<size; i++)
     {
-        vec1.push_back (rand()%201-100);
-    }
-    int temp;
-    for (int i=0; i<size-1; i++)
-    {
-        for (int j=0; j<size-i-1; j++)
+        for (int j=0; j<size-1; j++)
         {
-            if (vec1[j]>vec1[j+1])
+            if (vec[j]>vec[j+1])
             {
-                temp= vec1[j];
-                vec1[j]=vec1[j+1];
-                vec1[j+1]=temp;
+                temp= vec[j];
+                vec[j]=vec[j+1];
+                vec[j+1]=temp;
             }
         }
     }
     for (int i=0; i<size; i++)
     {
-        cout << vec1 << " ";
+        cout << vec[i] << " ";
     }
     cout << endl;
-    
-    return 0;
 }
 
-int main()
+void selectionSort(vector<int> vec)
 {
-    vector <int> vec2;
     int size=30;
-    vec2 = new int [size];
-    for (int i=0; i<size; i++)
-    {
-        vec2.push_back (rand()%201-100);
-    }
     int min=0;
     int men=0;
     for (int i=0; i<size; i++)
     {
         min=i;
         for (int j=i+1; j<size; j++)
-        min = (vec2[j]<vec2[min] ? j:min);
+            min = (vec[j]<vec[min] ? j:min);
         if (i!=min)
         {
-            men=vec2[i];
-            vec2[i]=vec2[min];
-            vec2[min]=men;
+            men=vec[i];
+            vec[i]=vec[min];
+            vec[min]=men;
         }
     }
-     for (int i=0; i<size; i++)
+    for (int i=0; i<size; i++)
     {
-        cout << vec1 << " ";
+        cout << vec[i] << " ";
     }
     cout << endl;
-    
-    return 0;
+}
+
+void mergeSort(vector<int>vec)
+{
+    if (vec.size() != 1)
+    {
+        vector<int> left;
+        vector<int> right;
+        int temp;
+        for (int i = 0; i < (vec.size() / 2); i++)
+        {
+            temp = vec[i];
+            left.push_back(temp);
+        }
+        for (int i = vec.size() / 2; i < vec.size(); i++)
+        {
+            temp = vec[i];
+            right.push_back(temp);
+        }
+        int L = 0;
+        int R = 0;
+        int M = 0;
+        while (L < left.size() && R < right.size())
+        {
+            if (left[L] < right[R])
+            {
+                vec[M] = left[L];
+                L++;
+                M++;
+            }
+            else
+            {
+                vec[M] = right[R];
+                R++;
+                M++;
+            }
+        }
+        while (L < left.size())
+        {
+            vec[M] = left[L];
+            L++;
+            M++;
+        }
+        while (R < right.size())
+        {
+            vec[M] = right[R];
+            R++;
+            M++;
+        }
+    }
+    for (int i=0; i<30; i++)
+    {
+        cout << vec[i] << " ";
+    }
+    cout << endl;
 }
 
 int main()
 {
-    vector <int> vec2;
-    int size=30;
-    vec2 = new int [size];
-    for (int i=0; i<size; i++)
+    vector<int>vec;
+    for (int i=0; i<30; i++)
     {
-        vec2.push_back (rand()%201-100);
+    vec.push_back(rand()%201-100);
     }
-    
-    
-    
 
-    merge(int vec(30), int l, int h, int m) 
+    for (int i=0; i<30; i++)
     {
-        int i, j, k, c[30];
-        i = l;
-        k = i;
-        j = m + 1;
-        while ((i <= m) && (j <= h))
-        {
-            if (vec[i] < vec[j])
-            {
-                c[k] = vec[i];
-                ++k; ++i;
-            }
-            else
-                {
-                c[k] = vec[j];
-                ++k; ++j;
-                }
-        }
-        while (i <= m) 
-        {
-            c[k] = vec[i];
-            k++;
-            i++;
-        }
-        while (j <= h)
-        {
-            c[k] = vec[j];
-            k++;
-            j++;
-        }
-        for (int s = l; s < k; ++s) vec[s] = c[s];
+        cout << vec[i] << " ";
     }
-    cout << "Sorted array: ";
-    for (int s = 0; s < 30; s++)
-    {
-        cout << vec[s] << endl;
-    }
-    
-    system(pause);
+    cout << endl;
+
+    bubbleSort(vec);
+
+    selectionSort(vec);
+
+    mergeSort(vec);
+
     return 0;
 }
