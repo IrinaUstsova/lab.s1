@@ -38,7 +38,7 @@ int main()
     cin >> c >> d >> e >> f;
     unsigned short int r_5 = (~(c | d)) & (e ^ f);
     cout << setw(4) << right << setfill('0');
-    cout << hex << showbase << r_5 << endl;
+    cout << hex << setw(2) << showbase << r_5 << endl;
 
     return 0;
 }
