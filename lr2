@@ -3,81 +3,71 @@
 
 using namespace std;
 
+int fact(int n)
+{
+    int f =1;
+    for(int i=1; i<=n; ++i)
+    { f *= i;}
+}
+
 int main ()
 {
     {
-    cout << " ASCII: " << endl;
-    char ch=0;
-    for ( int i = 0 ; i <= 255 ; ++ i) 
-      {
-        cout << ch << " has ASCII code " << static_cast<int>(ch) << endl;
-        ch ++;
-      }
+        cout << " ASCII: " << endl;
+        char ch = 0 ;
+        for ( int i = 0 ; i <= 255 ; ++ i)
+        {
+            cout << ch << " has ASCII code " << i << endl;
+            ch ++;
+        }
     }
-    
+
     {
         cout << "Enter symbols" << endl;
-    char a;
-    cin >> a;
-    if ((a >= '0') & (a <= '9')) cout << "digit" << endl;
-    else if (((a >= 'A') && (a <= 'Z')) || ((a >= 'a') && (a <= 'z'))) cout << "letter" << endl;
-    else cout << "symbols unknown" << endl;
+        char a;
+        cin >> a;
+        if ((a >= 48) && (a <= 57)) cout << "digit" << endl;
+        else if (((a >= 65) && (a <= 90)) || ((a >= 97) && (a <= 122))) cout << "letter" << endl;
+        else cout << "symbols unknown" << endl;
     }
 
     {
         unsigned int x;
-    cout << "Enter x" << endl;
-    cin >> x;
-    double y = 0;
-    int z = x % 5;
-    switch (z)
+        cout << "Enter x" << endl;
+        cin >> x;
+        double y = 0;
+        int z = x % 5;
+        switch (z)
+        {
+            case 0: y = pow(x, 2); break;
+            case 1: y = x; break;
+            case 2: y = 0; break;
+            case 3: y = -x; break;
+            case 4: y = -1; break;
+        }
+        cout << y << endl;
+    }
+
     {
-        case 0: y = pow(x, 2); break;
-        case 1: y = x; break;
-        case 2: y = 0; break;
-        case 3: y = -x; break;
-        case 4: y = -1; break;
+        cout << "enter x" << endl;
+        double x, y;
+        cin >> x;
+        y = cos(x);
+        for (int i=-2; i>=-6; i--)
+        {
+            int n=0;
+            long double h=0;
+            double e = pow(10, i);
+            while (abs(y-h) > e)
+            {
+                h+=pow(-1,n)*pow(x,2*n)/fact(2*n);
+                cout << y << " " << h << endl;
+                n++;
+            }
+            cout << "For accuracy " << i << " required " << n << " interations " << endl;
+        }
+
     }
-    cout << y << endl;
-    }
-    
-    {
-        double e,sum=1.0;
-    double y_1;
-    int i=0; 
-    cout << "Enter the accuracy" << endl;
-    cin >> e;
-    int x_4;
-    cout << "Enter the x" << endl;
-    cin >> x_4;
-    y_1= cos (x_4);
-    while((1 - y_1)>=e)
-    {
-        sum+=pow(-1,i) * pow(x_4, 2*i) / 2*i;
-        i++;
-    }
-    cout.precision(7);
-     cout << "For accuracy " << sum << " required " << i << " interations " << endl;
-    }
-    
-    {
-        double e,sum=1.0;
-    double y_1;
-    int i=0; 
-    cout << "Enter the accuracy" << endl;
-    cin >> e;
-    int x_4;
-    cout << "Enter the x" << endl;
-    cin >> x_4;
-    y_1= cos (x_4);
-    while((1 - y_1)>=e)
-    {
-        sum+=pow(-1,i) * pow(x_4, 2*i) / 2*i; ; 
-        i++;
-    }
-    cout.precision(7);
-     cout << "For accuracy " << sum << " required " << i << " interations " << endl;
-    }
-    
+
     return 0;
 }
