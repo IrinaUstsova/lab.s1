@@ -1,124 +1,56 @@
 #include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <fstream>
+#include <ctime>
+#include <cmath>
 
 using namespace std;
 
-struct subject
+int main(int )
 {
-    string name_of_subject;
-    int grade = 0;
-};
-
-struct student
-{
-    string name;
-    vector<subject> sub_vector;
-};
-
-ostream& operator <<(ostream& out, const vector<subject>& vec)
-{
-    for (auto& element : vec)
+    //1
+    int n;
+    int i;
+    cout << "enter n" << endl;
+    cin >> n;
+    double arr_1[i];
+    srand(time(nullptr));
+    for (int i=0; i<n; i++)
     {
-        out << element.name_of_subject << ";";
-        out << element.grade << ";";
+        arr_1[i]=((rand()%21-10)*1.0)/(rand()%21-10);
+        cout<<arr_1[i]<<"; ";
     }
-        return out;
-}
-
-ostream& operator <<(ostream& out, const vector<student>& stud)
-{
-    for (auto& element : stud)
+    cout << endl;
+    int arf = 0;
+    int k=0;
+    for (int i = 0; i <n; ++i)
     {
-        out << element.name << ";";
-        out << element.sub_vector << endl;
+        arf += arr_1[i];
+        k++;
     }
-    return out;
-}
+    cout << "The expression is equal to " << arf*1.0/k <<endl;
 
-istream& operator << (istream& in, const vector<student>& stud_2)
-{
-    string "text.txt"_str;
-    getline ("text.txt", "text.txt"_str,'\0');
-    for (student& stud_2: stud_2)
+    //2
+    double ary[n][n];
+    for (int i=0; i<n; i++)
     {
-        getline(in, stud_2.name);
-    }
-    return in;
-}
-
-istream& operator << (istream& in, const vector<subject>& stud_1)
-{
-    string "text.txt"_str;
-    getline ("text.txt", "text.txt"_str,'\0');
-    for (subject& stud_1: stud_1)
-    {
-        getline(in, stud_1.name_of_subject);
-        getline(in, stud_1.grade);
-    }
-    return in;
-}
-
-bool sorting (student stud1, student stud2)
-{
-    if (stud1.name > stud2.name)
-        return false;
-    else
-        return true;
-}
-
-int main()
-{
-    vector<student>students(3);
-    string sub[4]={"maths", "english", "chemistry", "physics"};
-    for (int i=0; i<3; i++)
-    {
-        cout << "enter a name:";
-        cin >> students[i].name;
-        students[i].sub_vector.resize(4);
-        for(int j=0; j<4; j++)
+        for (int j=0; j<n; j++)
         {
-            students[i].sub_vector[j].name_of_subject=sub[j];
-            cout << sub[j] << ": ";
-            cin >> students[i].sub_vector[j].grade;
+            ary[i][j]= ((rand()%21-10)*1.0)/(rand()%21-10);
+            cout <<  ary[i][j] << "; ";
+        }
+        cout << endl;
+    }
+    int arf2 = 0;
+    int k2=0;
+    for (int i = 0; i <n; ++i)
+    {
+        for (int j=0; j<n; j++)
+        {
+            arf2 += ary[i][j];
+            k2++;
         }
     }
-    sort(students.begin(), students.end(), sorting);
-    for (int i=0; i<3; i++)
-    {
-        cout << students[i].name << endl;
-    }
+    cout << "The expression is equal to " << arf2*1.0/k2 <<endl;
 
-    ofstream file("text.txt");
-    //file.open("text.txt", ios::out);
-    if(file.is_open())
-    {
-        file << students;
-    }
-    file.close();
-
-    int badst=0;
-    for (int i=0; i<3; i++)
-    {
-        for (int j=0; j<4; j++)
-        {
-            if (students[i].sub_vector[j].grade < 3)
-            {
-                cout << students[i].name << endl;
-                badst++;
-                break;
-            }
-        }
-    }
-    cout<<badst;
-
-    //file.open("text.txt", ios::out);
-    //if(file.is_open())
-    //{
-     //   file << students;
-    //}
 
     return 0;
 }
